@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'content.dart';
+import 'itemSuradetails.dart';
 import 'package:islamiapp/my_theme.dart';
 
 class verses extends StatefulWidget {
