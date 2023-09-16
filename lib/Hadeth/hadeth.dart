@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamiapp/Hadeth/ItemHadethName.dart';
 
+
 class hadeth extends StatefulWidget {
   @override
   State<hadeth> createState() => _hadethState();
@@ -17,7 +18,7 @@ class _hadethState extends State<hadeth> {
       children: [
         Expanded(
             flex: 1,
-            child: Image.asset('assets/images/qur2an_screen_logo.png')),
+            child: Image.asset('assets/images/hadeth_logo.png')),
         Divider(
           color: Theme.of(context).primaryColor,
           thickness: 2,
@@ -41,7 +42,7 @@ class _hadethState extends State<hadeth> {
                 );
               },
               itemBuilder: (context, index) {
-                return itemHadethName(hadeth: hadethlist[index],);
+                return itemHadethName( hadeth: hadethlist[index],);
               },
               itemCount: hadethlist.length,
             ))

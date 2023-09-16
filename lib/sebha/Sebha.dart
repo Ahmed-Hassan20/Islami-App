@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/my_theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class sebha extends StatefulWidget {
   @override
@@ -61,7 +62,7 @@ class _sebhaState extends State<sebha> {
                 width: 60,
                 height: 70,
                 decoration: BoxDecoration(
-                  color: mytheme.primaryColor,
+                  color: mytheme.primarylight,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
@@ -73,7 +74,7 @@ class _sebhaState extends State<sebha> {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: mytheme.primaryColor,
+                    color: mytheme.primarylight,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
                   '  ${Azkar[index]}  ',
