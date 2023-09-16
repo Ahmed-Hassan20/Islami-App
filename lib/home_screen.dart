@@ -3,6 +3,7 @@ import 'package:islamiapp/Hadeth/hadeth.dart';
 import 'package:islamiapp/quran/Quran.dart';
 import 'package:islamiapp/radio/Radio.dart';
 import 'package:islamiapp/sebha/Sebha.dart';
+import 'package:islamiapp/settings/settings.dart';
 
 import 'bottom_nav_item.dart';
 
@@ -14,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int selectedindex=0;
+  int selectedindex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -34,30 +35,40 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           bottomNavigationBar: Theme(
-            data: Theme.of(context).copyWith(
-              canvasColor: Theme.of(context).primaryColor
-            ),
-            child: BottomNavigationBar(currentIndex: selectedindex,
-                onTap: (index){
-              selectedindex=index;
-              setState(() {
-
-              });
-                }
-                ,items: [
-
-              bottom_nav_item(icon:ImageIcon(AssetImage('assets/images/icon_quran.png')) ,label:'Quran' ),
-              bottom_nav_item(icon:ImageIcon(AssetImage('assets/images/icon_hadeth.png')) ,label:'Hadeth' ),
-              bottom_nav_item(icon:ImageIcon(AssetImage('assets/images/icon_sebha.png')) ,label:'Sebha' ),
-              bottom_nav_item(icon:ImageIcon(AssetImage('assets/images/icon_radio.png')) ,label:'Radio' ),
-
-            ]),
+            data: Theme.of(context)
+                .copyWith(canvasColor: Theme.of(context).primaryColor),
+            child: BottomNavigationBar(
+                currentIndex: selectedindex,
+                onTap: (index) {
+                  selectedindex = index;
+                  setState(() {});
+                },
+                items: [
+                  bottom_nav_item(
+                      icon:
+                          ImageIcon(AssetImage('assets/images/icon_quran.png')),
+                      label: 'Quran'),
+                  bottom_nav_item(
+                      icon: ImageIcon(
+                          AssetImage('assets/images/icon_hadeth.png')),
+                      label: 'Hadeth'),
+                  bottom_nav_item(
+                      icon:
+                          ImageIcon(AssetImage('assets/images/icon_sebha.png')),
+                      label: 'Sebha'),
+                  bottom_nav_item(
+                      icon:
+                          ImageIcon(AssetImage('assets/images/icon_radio.png')),
+                      label: 'Radio'),
+                  bottom_nav_item(
+                      icon: Icon(Icons.settings), label: 'settings'),
+                ]),
           ),
           body: tabs[selectedindex],
         )
       ],
     );
   }
-  List<Widget> tabs=[quran(),hadeth(),sebha(),radio()];
-}
 
+  List<Widget> tabs = [quran(), hadeth(), sebha(), radio(),settings()];
+}

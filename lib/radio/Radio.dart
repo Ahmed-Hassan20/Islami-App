@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class radio extends StatelessWidget {
 
@@ -9,7 +10,7 @@ class radio extends StatelessWidget {
       child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset('assets/images/radio_image.png'),
-          Text('Quran Karim Radio',style: Theme.of(context).textTheme.titleMedium,),
+          Text(AppLocalizations.of(context)!.radio,style: Theme.of(context).textTheme.titleMedium,),
           Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.skip_previous,size: 40,),SizedBox(width: 12,),
