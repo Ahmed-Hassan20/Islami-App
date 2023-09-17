@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamiapp/my_theme.dart';
+import 'package:islamiapp/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 import 'ItemSuraName.dart';
 
@@ -122,27 +126,29 @@ class quran extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<appConfigProvider>(context);
+
     return Center(
       child: Column(
         children: [
           Expanded(flex:1,child: Image.asset('assets/images/qur2an_screen_logo.png')),
           Divider(
-            color: Theme.of(context).primaryColor,
+            color:provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
             thickness: 2,
           ),
           Text(
-            'Sura Name',
-            style: Theme.of(context).textTheme.titleMedium,
+            AppLocalizations.of(context)!.sura_name,
+            style:provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black)
           ),
           Divider(
-            color: Theme.of(context).primaryColor,
+            color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
             thickness: 2,
           ),
           Expanded(
             flex: 2,
               child: ListView.separated(
                 separatorBuilder: (context,index){return Divider(
-                  color: Theme.of(context).primaryColor,
+                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
                   thickness: 1,
                 );},
             itemBuilder: (context, index) {

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islamiapp/my_theme.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamiapp/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 class sebha extends StatefulWidget {
   @override
@@ -23,7 +25,7 @@ class _sebhaState extends State<sebha> {
   double turns = 0.0;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { var provider = Provider.of<appConfigProvider>(context);
     return Center(
         child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -47,38 +49,39 @@ class _sebhaState extends State<sebha> {
                   },
                   child: Stack(
                     alignment: Alignment.bottomCenter,
-                    children: [
+                    children: [provider.isDarkMode()?Image.asset('assets/images/head_sebha_dark.png'):
                       Image.asset('assets/images/head_sebha_logo.png'),
-                      Image.asset('assets/images/body_sebha_logo.png')
+                      provider.isDarkMode()?
+                      Image.asset('assets/images/body_sebha_dark.png'):Image.asset('assets/images/body_sebha_logo.png')
                     ],
                   ),
                 ),
               ),
               Text(
-                'عدد التسبيحات',
-                style: Theme.of(context).textTheme.titleMedium,
+                AppLocalizations.of(context)!.azkar,
+                style:  provider.isDarkMode()? Theme.of(context).textTheme.titleMedium!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleMedium!.copyWith(color: mytheme.black),
               ),
               Container(
                 width: 60,
                 height: 70,
                 decoration: BoxDecoration(
-                  color: mytheme.primarylight,
+                  color: provider.isDarkMode()?mytheme.primarydark:mytheme.primarylight,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
                   child: Text(
                     '$counter',
-                    style: Theme.of(context).textTheme.titleSmall,
+                    style: provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black),
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: mytheme.primarylight,
+                    color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
                   '  ${Azkar[index]}  ',
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(color: mytheme.white),
+                  style: provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white),
                 ),
               ),
             ]));

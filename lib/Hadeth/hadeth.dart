@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamiapp/Hadeth/ItemHadethName.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:islamiapp/my_theme.dart';
+import 'package:islamiapp/providers/app_config_provider.dart';
+import 'package:provider/provider.dart';
 
 
 class hadeth extends StatefulWidget {
@@ -13,6 +17,8 @@ class _hadethState extends State<hadeth> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<appConfigProvider>(context);
+
     if(hadethlist.isEmpty){loadHadeth();};
     return Column(
       children: [
@@ -20,15 +26,15 @@ class _hadethState extends State<hadeth> {
             flex: 1,
             child: Image.asset('assets/images/hadeth_logo.png')),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color:provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
           thickness: 2,
         ),
         Text(
-          'Hadeth Name',
-          style: Theme.of(context).textTheme.titleMedium,
+          AppLocalizations.of(context)!.hadeth_name,
+          style: provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black),
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
           thickness: 2,
         ),
         hadethlist.isEmpty?Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,)):
@@ -37,7 +43,7 @@ class _hadethState extends State<hadeth> {
             child: ListView.separated(
               separatorBuilder: (context, index) {
                 return Divider(
-                  color: Theme.of(context).primaryColor,
+                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
                   thickness: 1,
                 );
               },

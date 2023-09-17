@@ -9,25 +9,25 @@ class mytheme {
   static ThemeData lighttheme = ThemeData(
       scaffoldBackgroundColor: Colors.transparent,
       primaryColor: primarylight,
-
-      appBarTheme:
-          AppBarTheme(backgroundColor: Colors.transparent, elevation: 0,centerTitle: true,iconTheme: IconThemeData(color: black)),
+      appBarTheme: AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          iconTheme: IconThemeData(color: black)),
       textTheme: TextTheme(
-          titleLarge: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.w700, color:black),
-      titleMedium: TextStyle(
-          fontSize: 25, fontWeight: FontWeight.w600, color:black),
-        titleSmall: TextStyle(
-            fontSize: 25, fontWeight: FontWeight.w400, color:black),
+        titleLarge:
+            TextStyle(fontSize: 30, fontWeight: FontWeight.w700, color: black),
+        titleMedium:
+            TextStyle(fontSize: 25, fontWeight: FontWeight.w600, color: black),
+        titleSmall:
+            TextStyle(fontSize: 25, fontWeight: FontWeight.w400, color: black),
       ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        backgroundColor: primarylight,
+          selectedItemColor: black,
+          selectedIconTheme: IconThemeData(size: 30)));
 
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      selectedItemColor: black,
-        selectedIconTheme: IconThemeData(size: 30 )
-    )
 
-
-  );
   static ThemeData darkTheme = ThemeData(
     primaryColor: primarydark,
     scaffoldBackgroundColor: Colors.transparent,
@@ -36,7 +36,7 @@ class mytheme {
       elevation: 0,
       centerTitle: true,
       iconTheme: IconThemeData(
-        color: white,
+        color: yellow,
       ),
     ),
     textTheme: TextTheme(
@@ -57,10 +57,9 @@ class mytheme {
       ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: primarylight,
+      backgroundColor: primarydark,
       selectedItemColor: yellow,
       unselectedItemColor: white,
     ),
   );
 }
-
