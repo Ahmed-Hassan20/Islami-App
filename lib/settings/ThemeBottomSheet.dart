@@ -51,18 +51,18 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(text,
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
               color: provider.isDarkMode() ?
-              mytheme.white
+              mytheme.yellow
                   :
-              Theme.of(context).primaryColor,
+              mytheme.black,
             ),
           ),
           Icon(Icons.check ,
             color: provider.isDarkMode() ?
-            mytheme.white
+            mytheme.yellow
                 :
-            Theme.of(context).primaryColor,
+            mytheme.black,
             size: 30,
           )
         ],
@@ -73,7 +73,7 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Text(text ,
-        style: Theme.of(context).textTheme.titleMedium,
+        style: Theme.of(context).textTheme.titleSmall,
       ),
     );
   }

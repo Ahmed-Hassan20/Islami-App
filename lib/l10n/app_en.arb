@@ -5,11 +5,13 @@
   "sebha": "Sebha",
   "radio": "Radio",
   "sura_name": "Sura Name",
+  "hadeth_name": "Hadeth Name",
   "settings": "Settings",
   "english": "English",
   "arabic": "Arabic",
   "light": "Light",
   "dark": "Dark",
   "theme": "Theme",
-  "language": "Language"
+  "language": "Language",
+  "azkar": "Supplications"
 }

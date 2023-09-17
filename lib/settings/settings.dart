@@ -40,7 +40,9 @@ class _settingsState extends State<settings> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.english,
+                  provider.appLanguage=='en'?
+              AppLocalizations.of(context)!.english
+                  :AppLocalizations.of(context)!.arabic ,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   Icon(Icons.arrow_drop_down)
@@ -49,7 +51,7 @@ class _settingsState extends State<settings> {
             ),
           ),
           SizedBox(height: 15),
-          Text(AppLocalizations.of(context)!.language ,
+          Text(AppLocalizations.of(context)!.theme ,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           SizedBox(height: 15),
