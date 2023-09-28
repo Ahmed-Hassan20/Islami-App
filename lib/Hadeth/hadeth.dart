@@ -26,7 +26,7 @@ class _hadethState extends State<hadeth> {
             flex: 1,
             child: Image.asset('assets/images/hadeth_logo.png')),
         Divider(
-          color:provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+          color:provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
           thickness: 2,
         ),
         Text(
@@ -34,7 +34,7 @@ class _hadethState extends State<hadeth> {
           style: provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black),
         ),
         Divider(
-          color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+          color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
           thickness: 2,
         ),
         hadethlist.isEmpty?Center(child: CircularProgressIndicator(color: Theme.of(context).primaryColor,)):
@@ -43,7 +43,7 @@ class _hadethState extends State<hadeth> {
             child: ListView.separated(
               separatorBuilder: (context, index) {
                 return Divider(
-                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
                   thickness: 1,
                 );
               },

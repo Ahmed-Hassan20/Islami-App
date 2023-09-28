@@ -65,7 +65,7 @@ class _sebhaState extends State<sebha> {
                 width: 60,
                 height: 70,
                 decoration: BoxDecoration(
-                  color: provider.isDarkMode()?mytheme.primarydark:mytheme.primarylight,
+                  color: provider.isDarkMode()?mytheme.primarydark:mytheme.primarycolor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
@@ -77,7 +77,7 @@ class _sebhaState extends State<sebha> {
               ),
               Container(
                 decoration: BoxDecoration(
-                    color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+                    color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
                     borderRadius: BorderRadius.circular(20)),
                 child: Text(
                   '  ${Azkar[index]}  ',

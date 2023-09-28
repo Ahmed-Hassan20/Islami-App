@@ -17,9 +17,9 @@ class radio extends StatelessWidget {
           Text(AppLocalizations.of(context)!.radio,style: Theme.of(context).textTheme.titleMedium,),
           Row(mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.skip_previous,size: 40,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,),SizedBox(width: 12,),
-              Icon(Icons.play_arrow,size: 60,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,),SizedBox(width: 12,),
-              Icon(Icons.skip_next,size: 40,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,)
+              Icon(Icons.skip_previous,size: 40,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,),SizedBox(width: 12,),
+              Icon(Icons.play_arrow,size: 60,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,),SizedBox(width: 12,),
+              Icon(Icons.skip_next,size: 40,color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,)
             ],
           )
         ],

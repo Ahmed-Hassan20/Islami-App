@@ -133,7 +133,7 @@ class quran extends StatelessWidget {
         children: [
           Expanded(flex:1,child: Image.asset('assets/images/qur2an_screen_logo.png')),
           Divider(
-            color:provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+            color:provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
             thickness: 2,
           ),
           Text(
@@ -141,14 +141,14 @@ class quran extends StatelessWidget {
             style:provider.isDarkMode()? Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.white):Theme.of(context).textTheme.titleSmall!.copyWith(color: mytheme.black)
           ),
           Divider(
-            color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+            color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
             thickness: 2,
           ),
           Expanded(
             flex: 2,
               child: ListView.separated(
                 separatorBuilder: (context,index){return Divider(
-                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarylight,
+                  color: provider.isDarkMode()?mytheme.yellow:mytheme.primarycolor,
                   thickness: 1,
                 );},
             itemBuilder: (context, index) {
